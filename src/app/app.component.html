@@ -1,3 +1,11 @@
+<div class="row ">
+  <div class="col-md-3"></div>
+  <div class="col-md-6"><label for="To-Do-List">To-Do-List</label></div>
+  <div class="col-md-3"></div>
+</div>
+<ul>
+  <label *ngFor="let ch of task"><input type="checkbox">{{ch.title}} : {{ch.description}}<br></label>
+</ul>
 <div>
-  <app-title></app-title>
+  <app-title (data)="AddTask($event)"></app-title>
 </div>

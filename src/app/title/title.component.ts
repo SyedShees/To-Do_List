@@ -6,14 +6,14 @@ import { Task } from '../models/Task';
   styleUrls: ['./title.component.css']
 })
 export class TitleComponent implements OnInit {
-  @Output() AddTaskEvent= new EventEmitter<object>();
+  @Output() data= new EventEmitter<{title:string, description:string}>();
 
   Addtask(){
     
-    var title = prompt("Enter The Title?") || "";
-    var description = prompt("Enter The Description?") || "";
-    console.log(this.AddTaskEvent.emit({title,description}));
-    this.AddTaskEvent.emit({title,description});
+    var Title = prompt("Enter The Title?") || "";
+    var Description = prompt("Enter The Description?") || "";
+    //console.log(this.AddTaskEvent.emit({title,description}));
+    this.data.emit({title:Title,description:Description});
     
     
   }

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { Task } from './models/Task';
 @Component({
   selector: 'app-root',
@@ -7,12 +6,13 @@ import { Task } from './models/Task';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  task: any[] = [];
+  
+  public task = [{title:"walk",description:"daily"}];
 
   
 
-  AddTask(tit:string,des: string){
-    this.task.push({'title':tit,'description':des});
+  AddTask(data:any){
+    this.task.push(data);
     console.log(this.task);
     
   }
